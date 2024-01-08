@@ -1,0 +1,58 @@
+{% set title = "Message: " ~ tutor.tutor_name %}
+{% set css = ["send_message.css"] %}
+{# {% set js = [""] %} #}
+{% extends "base.jinja2" %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block body %}
+<table>
+    <tr>
+        <th>Tutor:</th>
+        <td>
+{#            <a href="{{ url_for('tutor_profile', tutor_id=(tutor.tutor_id)) }}">#}
+            <div id="tutor-profile" class="bg">
+                {% if tutor.tutor_photo != None %}
+                    <img src="{{ url_for('static', filename=('tutors/'+ tutor.tutor_photo + '/photo.jpg')) }}" alt="{{ tutor.tutor_name }}'s Photo">
+                {% else %}
+                    <img src="{{ url_for('static', filename='image/test/def_pfp.jpg') }}" alt="{{ tutor.tutor_name }}'s Photo">
+                {% endif %}
+
+                <span id="tutor-name">{{tutor.tutor_name}}</span>
+            </div>
+{#            </a>#}
+        </td>
+    </tr>
+    <tr>
+        <th>Subject:</th>
+        <td id="subject-line" class="bg">
+            <span>{{ subj_db.query.filter_by(subj_id=tutor.tutor_subj).first().subj_short }}</span>
+            <span>{{ tutor.tutor_subj_num }}</span>
+        </td>
+    </tr>
+    <tr>
+        <th id="message-line">Message:</th>
+        <td>
+            <form id="message-form" method="POST">
+                {{ form.csrf_token }}
+
+                {% for field in form.data.keys() %}
+                {% if field != "csrf_token" %}
+                    {{ form[field] }}
+
+                    {% if form[field]['errors'] %}
+                        <ul class="errors">
+                            {% for error in form[field]['errors'] %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endif %}
+                {% endfor %}
+            </form>
+        </td>
+    </tr>
+</table>
+{% endblock %}

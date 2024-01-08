@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - Tutorlink</title>
+</head>
+
+<body>
+    <h1>CSC-648-03 Fall 2023</h1>
+    <h2>Team 02</h2>
+
+    <form method="POST">
+        {{ form.csrf_token }}
+
+        {% for field in form.data.keys() %}
+        {% if field != "csrf_token" and field != "submit" %}
+        <fieldset class="{{ field }}">
+            {{ form[field]['label'] }} {{ form[field] }}
+            {% if form[field]['errors'] %}
+            <ul class="errors">
+                {% for error in form[field]['errors'] %}
+                <li>{{ error }}</li>{% endfor %}
+            </ul>
+            {% endif %}
+        </fieldset>
+        {%endif%}
+        {% endfor %}
+
+        <div class="submit-button">
+            {{ form.submit }}
+        </div>
+
+    </form>
+
+</body>

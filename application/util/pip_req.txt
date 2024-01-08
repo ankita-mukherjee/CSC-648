@@ -1,0 +1,5 @@
+flask
+Jinja2
+Flask-Login
+flask_wtf
+wtforms

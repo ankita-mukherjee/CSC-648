@@ -1,0 +1,310 @@
+/*Sets up some base elements of navbar*/
+#nav-bar
+{
+  pointer-events: none;
+  background-color: #231161;
+  min-height: 144px;
+}
+.nav-link
+{
+  pointer-events: all;
+  display: inline-block;
+  width: auto;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 8px;
+  font-size: 18px;
+  background-color: #fc3;
+}
+.nav-link:hover
+{
+    text-decoration: underline;
+    background-color: #303;
+    color: #fc3;
+}
+#warning-label
+{
+  pointer-events: none;
+  display: block;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 15px;
+  font-size: 18px;
+  color: white;
+}
+
+.nav-container {
+  pointer-events: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+
+#nav-left
+{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+#tutorlink-logo
+{
+  pointer-events: all;
+  display: inline-block;
+  margin-top: 10px;
+  width: 120px;
+  height: 120px;
+  font-size: 20px;
+  color: white;
+  background-color: inherit;
+  align-self: center;
+}
+#tutorlink-logo:hover
+{
+  /*background-color: #303;*/
+  /*border: 2px solid white;*/
+  /*box-sizing: border-box;*/
+}
+#about-us
+{
+  text-align: center;
+  width: 90px;
+  margin-left: 29px;
+  margin-right: 50px;
+  margin-top: 90px;
+}
+
+/*Search Bar positioning and appearance*/
+#tutorlink-logo-hidden
+{
+  pointer-events: all;
+  display: none;
+  margin-top: 10px;
+  width: 120px;
+  height: 120px;
+  font-size: 20px;
+  color: white;
+  background-color: inherit;
+  align-self: center;
+}
+#search-bar-wrapper
+{
+  pointer-events: none;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+#search-bar
+{
+  display: flex;
+  align-items: center;
+  max-width: 645px;
+  height: 70px;
+  width: 100%;
+  padding: 6px;
+  margin-top: 30px;
+  border-radius: 7px;
+  background-color: #ffdc70;
+}
+/*Search Bar elements*/
+#search_subject
+{
+  pointer-events: all;
+  flex: 1;
+  margin-right: 5px;
+  max-width: 130px;
+  width: 20vw;
+  height: 60px;
+  border-radius: 8px;
+  font-size: 18px;
+  border-color: white;
+  background-color: white;
+}
+#search_term
+{
+  pointer-events: all;
+  flex: 2;
+  max-width: 420px;
+  margin: 0 5px;
+  height: 56px;
+  font-size: 18px;
+  border-color: white;
+  background-color: white;
+}
+#search_submit
+{
+  pointer-events: all;
+  flex: 0 0 auto;
+  margin-left: 5px;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+  border-color: white;
+  background-color: white;
+}
+#search_submit:hover
+{
+  background-color: #bfbfbf;
+}
+
+/*holds user/account related buttons and tutor signup*/
+#nav-right
+{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 90px;
+}
+#about-us-right
+{
+  display: none;
+  text-align: center;
+  width: 90px;
+}
+
+#tutor-signup
+{
+  float: right;
+  width: 158px;
+  margin-left: 50px;
+  margin-right: 6vw;
+  overflow: hidden;
+}
+#login, #register
+{
+  text-align: center;
+  width: 66px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+#username-plate
+{
+  pointer-events: all;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+  /*height: auto;*/
+}
+#username-plate:hover
+{
+  text-decoration:underline;
+}
+/*spacing for user dropdown buttons*/
+#user-dropdown
+{
+  float: right;
+  pointer-events: all;
+  margin-top: -5px;
+  width: 108px;
+}
+.drop-link
+{
+  margin: 2px 0px;
+  width: 88px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: left;
+}
+#user-dropdown.is-visible
+{
+  position: absolute;
+  margin-left: 70px;
+  margin-top: 2px;
+  display: block;
+}
+#user-dropdown.not-visible
+{
+  display: none;
+}
+
+@media screen and (max-width: 650px)
+{
+  #tutorlink-logo,
+  #about-us
+  {
+    display: none;
+  }
+
+  #tutorlink-logo-hidden
+  {
+    display: none;
+  }
+
+  .nav-container
+  {
+    flex-direction: column;
+  }
+
+  #search-bar-wrapper
+  {
+    margin-top: 80px;
+  }
+
+  #tutor-signup
+  {
+    float: none;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  #nav-right
+  {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  #about-us-right
+  {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1400px) and (min-width: 650px)
+{
+  #tutorlink-logo-hidden
+  {
+    display: block;
+  }
+
+  #tutorlink-logo,
+  #about-us
+  {
+    display: none;
+  }
+
+  .nav-container
+  {
+    flex-direction: column;
+  }
+
+  #search-bar-wrapper
+  {
+    margin-top: 80px;
+  }
+
+  #tutor-signup
+  {
+    float: none;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  #nav-right
+  {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  #about-us-right
+  {
+    display: block;
+  }
+}

@@ -1,0 +1,8 @@
+{% for message in get_flashed_messages() %}
+    <div class="flash-message-wrapper">
+        <div class="alert alert-warning" id="flash-message-popup">
+            <span>{{ message }}</span>
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+        </div>
+    </div>
+{% endfor %}

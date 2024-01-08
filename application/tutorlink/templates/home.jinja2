@@ -1,0 +1,44 @@
+{% set title = "Search - Tutorlink" %}
+{% set css = ["home.css", "tutor_post.css", "slick.css", "slick-theme.css"] %}
+{% set js = ["home.js"] %}
+{% extends "base.jinja2" %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block body %}
+    <h1 id="page-title">Find Tutors For Your SFSU Courses</h1>
+
+    <div class="subject-cards-clip-container">
+        <h2 id="subject-cards-title">Browse our Top Subjects</h2>
+        <div class="subject-cards subject-container">
+            {% for subject in subject_list %}
+                <div class="subject-card">
+                    {{ subject.text }}
+                </div>
+                {% if loop.index % 3 == 0 %}
+                    <div class="clearfix"></div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <h2 id="new-tutor-title">Browse Newly Added Tutors</h2>
+
+    <div class="new-tutors-clip-container">
+        <div class="tutor-container">
+            <div class="tutor-row">
+                {% for tutor in tutor_list %}
+                    {% set tutor=tutor %}
+                    {% set subj_db=subj_db %}
+                    {% include '/partials/tutor_post.jinja2' %}
+                    {% if loop.index % 4 == 0 %}
+                        <div class="clearfix"></div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

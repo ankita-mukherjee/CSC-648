@@ -1,0 +1,23 @@
+<div class="tutor-post">
+    <a href="/tutor/view/{{ tutor.tutor_id }}" target="_blank">
+        <div class="tutor-post-header">
+            {% if tutor.tutor_photo != None %}
+            <img src="{{ url_for('static', filename=('tutors/'+ tutor.tutor_photo + '/photo.jpg')) }}" alt="{{ tutor.tutor_name }}'s Photo">
+            {% else %}
+            <img src="{{ url_for('static', filename=('image/test/def_pfp.jpg')) }}" alt="{{ tutor.tutor_name }}'s Photo">
+            {% endif %}
+
+
+            <div class="tutor-post-header-text">
+                <div class="tutor-name">{{ tutor.tutor_name }}</div>
+                <div class="subj">{{ subj_db.query.filter_by(subj_id=tutor.tutor_subj).first().subj_short ~ ' ' ~ tutor.tutor_subj_num }}</div>
+            </div>
+        </div>
+
+
+        <p>{{ tutor.tutor_bio }}</p>
+    </a>
+
+    {# TODO: add link to send message page #}
+    <a class="send-message-button" href="{{ url_for('message_tutor', tutor_id=(tutor.tutor_id)) }}" target="_blank">Send Message</a>
+</div>

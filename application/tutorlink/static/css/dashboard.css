@@ -1,0 +1,84 @@
+.page-header
+{
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+}
+
+.page-header
+{
+    text-align: center;
+}
+
+.dashboard-container
+{
+    width: 90%;
+    margin: 0 auto 5%;
+}
+
+.dashboard-tabs
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.tab
+{
+    padding: 10px;
+}
+
+input[type="radio"]
+{
+    display: none;
+}
+
+.tab-label
+{
+    padding: 10px;
+    cursor: pointer;
+    background-color: white;
+}
+
+input[type="radio"]:checked + label
+{
+    background-color: #fc3;
+    color: #303;
+}
+
+.tab-label:hover
+{
+    background-color: #ffdc70;
+    color: #303;
+}
+
+.my-posts
+{
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 0.5px solid black;
+}
+
+.sent
+{
+    border-top: 1px solid black;
+    border-left: 0.5px solid black;
+    border-right: 0.5px solid black;
+}
+
+.received
+{
+    border-top: 1px solid black;
+    border-left: 0.5px solid black;
+    border-right: 1px solid black;
+}
+
+.dashboard-body
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 0.5px solid black;
+    border-bottom: 0.5px solid black;
+}

@@ -1,0 +1,41 @@
+.flash-message-wrapper
+{
+    display: block;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 15vh;
+}
+
+.alert {
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(82, 43, 43, 0.3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert button {
+    border: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.alert-warning {
+    padding: 20px;
+}
+
+.alert span
+{
+    padding-right: 10px;
+}

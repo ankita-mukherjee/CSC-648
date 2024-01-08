@@ -1,0 +1,53 @@
+<nav id="nav-bar">
+    <span id="warning-label">SFSU Software Engineering Project CSC 648-848, Fall 2023. For Demonstration Only.</span>
+
+    <div class="nav-container">
+        <div id="nav-left">
+            <a id="tutorlink-logo" href="/"><img src="{{ url_for("static", filename="image/TutorLinkLogo.png") }}" alt="TutorLink Logo Location"></a>
+            <a id="about-us" class="nav-link" href="{{ url_for("about_list") }}">About Us</a>
+        </div>
+
+        <div id="search-bar-wrapper">
+        <a id="tutorlink-logo-hidden" href="/"><img src="{{ url_for("static", filename="image/TutorLinkLogo.png") }}" alt="TutorLink Logo Location"></a>
+            {% set form = search_form() %}
+            <form id="search-bar" method="POST" action="{{ url_for("search_page") }}">
+                {{ form.csrf_token }}
+
+                {% for field in form.data.keys() %}
+                {% if field != "csrf_token" and field != "submit" %}
+                    {{ form[field] }}
+                    {% if form[field]['errors'] %}
+                    <ul class="errors">
+                        {% for error in form[field]['errors'] %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                {% endif %}
+                {% endfor %}
+            </form>
+        </div>
+
+        <div id="nav-right">
+            <a id="about-us-right" class="nav-link" href="{{ url_for("about_list") }}">About Us</a>
+            <a id="tutor-signup" class="nav-link" href="/tutor/register">Register as a Tutor</a>
+            {% set username = get_curr_user() %}
+            {% if username %}
+                <div id="logged-in">
+                    <span id="username-plate" class="nav-link">Welcome, {{ username }} ▼</span>
+                    <br>
+                    <div id="user-dropdown" class="not-visible">
+                        <a class="nav-link drop-link" href="{{ url_for("dashboard") }}">Dashboard</a>
+                        <br>
+                        <a class="nav-link drop-link" href="/settings">Settings</a>
+                        <br>
+                        <a class="nav-link drop-link" href="{{ url_for("logout") }}">Log out</a>
+                    </div>
+                </div>
+            {% else %}
+                <a id="login" class="nav-link" href="{{ url_for("login_page") }}">Login</a>
+                <a id="register" class="nav-link" href="{{ url_for("register_page") }}">Sign up</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>

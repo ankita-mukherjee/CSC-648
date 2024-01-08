@@ -1,0 +1,24 @@
+<a href="{{ url_for('view_message', msg_id=msg_id) }}" target="_blank">
+<div class="message">
+    <div class="message-content">
+        {% if tutor.tutor_photo != None %}
+        <img src="{{ url_for('static', filename=('tutors/'+ tutor.tutor_photo + '/photo.jpg')) }}" alt="{{ tutor.tutor_name }}'s Photo">
+        {% else %}
+        <img src="{{ url_for('static', filename='image/test/def_pfp.jpg') }}" alt="{{ tutor.tutor_name }}'s Photo">
+        {% endif %}
+
+        <div class="message-info">
+            <div class="message-header">
+                <h3 class="message-subject">{{ subject }}</h3>
+                <p class="message-date">Date</p>
+            </div>
+
+            {% if sender %}
+            From: {{ sender }}
+            {% else %}
+            To: {{ tutor.tutor_name }}
+            {% endif %}
+        </div>
+    </div>
+</div>
+</a>

@@ -1,0 +1,28 @@
+.d-post
+{
+    border-top: 0.5px solid black;
+    border-bottom: 0.5px solid black;
+}
+
+.d-post:nth-child(even)
+{
+    background-color: #eeeeee;
+}
+
+.d-post:nth-child(odd)
+{
+    background-color: #cfcfcf;
+}
+
+.d-post-header
+{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.d-post-description
+{
+    border-top: 1px dashed black;
+    padding: 10px;
+}

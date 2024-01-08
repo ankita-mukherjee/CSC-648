@@ -1,0 +1,35 @@
+{% set title = "Search - Tutorlink" %}
+{% set css = ["search.css", "tutor_post.css"] %}  {# These work, they're just commented out because script tries to load the css/js #}
+{# {% set js = [""] %} #}  {# files despite being empty strings, which causes 404 in background (unnoticeable) #}
+{% extends "base.jinja2" %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block body %}
+    {% if res != None %}
+        <h4 class="search-result-header">
+            {{ res | length }} {{ "result" if res | length == 1 else "results" }} found for "{{ search_term }}"
+        </h4>
+
+         <div class="new-tutors-clip-container">
+            <div class="search-tutors-container tutor-container">
+                <div class="tutor-row">
+                    {% for tutor in res %}
+                        {% set tutor=tutor %}
+                        {% set subj_db=subj_db %}
+                        {% include '/partials/tutor_post.jinja2' %}
+                        {% if loop.index % 4 == 0 %}
+                            <div class="clearfix"></div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="search-result-footer"> === End Of Results ===</div>
+    {% else %}
+        <div class="search-result-footer"> === No Search Term Entered ===</div>
+    {% endif %}
+{% endblock %}

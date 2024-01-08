@@ -1,0 +1,40 @@
+{% set title = "Register"%}
+{% set css = ["register.css"]%}
+{% extends "base.jinja2"%}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"/>
+{% endblock %}
+
+{% block body %}
+<div class="register-body">
+<div class="register-wrapper">
+    <h1>Sign Up</h1>
+    <form method="POST">
+        {{ form.csrf_token }}
+        
+        <div class="register-box">
+            <input type="text" name="username" placeholder="Username" required>
+        </div>
+
+        <div class="register-box">
+            <input type="text" name="email" placeholder="Email" required>
+        </div>
+
+        <div class="register-box">
+            <input type="password" name="password" placeholder="Password" required>
+        </div>
+        <div class="register-agreement">
+        <input type="checkbox" required>I agree to the <b>TutorLink Terms</b>
+        </div>
+        <div>
+            <button class="btn" type="submit">Sign Up</button>
+        </div>
+        <div class="register-login">
+        Already a member? <a href="{{ url_for('login_page') }}"><b>Log In</b></a>
+        </div>
+    </form>
+</div>
+</div>
+{% endblock %}

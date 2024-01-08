@@ -1,0 +1,15 @@
+#page-footer
+{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    background-color: #666666;
+}
+#page-footer span, #page-footer a
+{
+    width: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}

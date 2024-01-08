@@ -1,0 +1,110 @@
+.new-tutors-clip-container
+{
+  display: flex;
+  justify-content: center;
+}
+
+.tutor-row
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tutor-name
+{
+    font-weight: bold;
+}
+
+.subj
+{
+    font-style: italic;
+}
+
+.tutor-post-header-text
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.tutor-container
+{
+    max-width: 1640px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.tutor-post
+{
+    width: 370px;
+    height: 350px;
+    background-color: #f5f5f5;
+    box-sizing: border-box;
+    text-align: center;
+    color: black;
+    cursor: pointer;
+    margin: 15px;
+    position: relative;
+}
+
+.tutor-post-header
+{
+    height: 20%;
+    background-color: #3B3934;
+    color: white;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.tutor-post-header:hover
+{
+    background-color: #fc3;
+    color: #303;
+}
+
+.tutor-post-header img
+{
+    max-width: 100%;
+    max-height: 75%;
+    padding: 5%;
+}
+
+.tutor-post p
+{
+    padding: 5px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.send-message-button
+{
+    background-color: #ffdc70;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+}
+
+.send-message-button:hover
+{
+    background-color: #fc3;
+    color: #303;
+}
+
+.clearfix
+{
+    clear: both;
+}

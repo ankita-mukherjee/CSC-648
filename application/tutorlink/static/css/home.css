@@ -1,0 +1,46 @@
+#page-title {
+    text-align: center;
+}
+
+#subject-cards-title,
+#new-tutor-title
+{
+    color: #231161;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.subject-cards-clip-container
+{
+    overflow: hidden;
+    margin: 0 auto;
+    padding-bottom: 5%;
+    max-width: 1620px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.subject-cards
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.subject-card
+{
+    width: calc(33.33% - 30px);
+    background-color: #fc3;
+    text-align: center;
+    line-height: 100px;
+    color: black;
+    cursor: pointer;
+    margin: 15px;
+    font-size: larger;
+    box-sizing: border-box;
+}
+
+.clearfix
+{
+    clear: both;
+}

@@ -1,0 +1,23 @@
+.search-result-footer
+{
+    margin: 10px;
+    text-align: center;
+}
+
+.search-tutors-clip-container
+{
+    display: flex;
+    justify-content: center;
+}
+
+.search-tutors-container
+{
+    max-width: 1640px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border: 1px solid black;
+}

@@ -1,0 +1,19 @@
+{% set title = "About " ~ student.name %}
+{% set css = ["about_template.css"] %}
+{#{% set js = [""] %}#}
+{% extends "base.jinja2" %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>About {{ student.name }}</h1>
+        <img id="about-pic" src="{{ url_for('static', filename=('image/about/'+student.photo) ) }}" alt="{{ student.name }}'s Photo" width="200">
+        <p><strong>Name:</strong> {{ student.name }}</p>
+        <p><strong>Email:</strong> {{ student.email }}</p>
+        <p><strong>Bio:</strong> {{ student.bio }}</p>
+        <a href="{{ url_for("about_list") }}" id="return-link">Back to List</a>
+    </div>
+{% endblock %}

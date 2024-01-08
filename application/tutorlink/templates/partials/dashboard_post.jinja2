@@ -1,0 +1,13 @@
+<div class="d-post">
+    <div class="d-post-header">
+        <a href="/tutor/view/{{ post.tutor_id }}"><h3>
+            Subject: {{ subj_db.query.filter_by(subj_id=post.tutor_subj).first().subj_short }} {{ post.tutor_subj_num }}
+        </h3></a>
+    </div>
+    <div class="d-post-description">
+        <h4>
+            Description:
+        </h4>
+        {{ post.tutor_bio }}
+    </div>
+</div>

@@ -1,0 +1,35 @@
+{% if sender %}
+    {% set title = "Message To: " ~ tutor.tutor_name %}
+{% else %}
+    {% set title = "Message From: " ~ student.user_name %}
+{% endif %}
+{% set css = ["view_message.css"] %}
+{# {% set js = [""] %} #}
+{% extends "base.jinja2" %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block body %}
+    <a href="{{ url_for("dashboard") }}" id="return-link"><< Back to Dashboard</a>
+
+    <table>
+    <tr>
+        <th>From:</th>
+        <td>{{ student.user_name }}</td>
+    </tr>
+    <tr>
+        <th>To:</th>
+        <td>{{ tutor.tutor_name }}</td>
+    </tr>
+    <tr>
+        <th>Subject:</th>
+        <td>{{ subject }}</td>
+    </tr>
+    <tr>
+        <th>Message:</th>
+        <td>{{ message }}</td>
+    </tr>
+    </table>
+{% endblock %}

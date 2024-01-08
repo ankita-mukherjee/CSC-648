@@ -1,0 +1,67 @@
+{% set title = "Tutor Application"%}
+{% set css = ["apply.css"]%}
+{% extends "base.jinja2"%}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"/>
+{% endblock %}
+
+{% block body %}
+<div class="app-body">
+<div class="app-wrapper">
+    <h1>Tutor Application</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        <div class="app-box">
+            {{ form.name }}
+            {% if form.name.errors %}
+                <ul class="errors">
+                    {% for error in form.first.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <div class="subject-class-wrapper">
+            {{ form.subjects(class="subjects-select") }}
+            {{ form.subject_num }}
+        </div>
+        <div class="app-description">
+            {{ form.bio }}
+        </div>
+        <div class="app-file-upload">
+            <div class="app-box">
+                {{ form.video }}
+            </div>
+            <div class="file-upload-app">
+            <b>Upload CV</b>
+                {{ form.cv_file }}
+            </div>
+            <div class="file-upload-app">
+            <b>Upload Picture</b>
+                {{ form.pic_file }}
+            </div>
+        </div>
+        <div>
+            {{ form.submit }}
+        </div>
+        <div class="requires-approval">
+            *Requires approval
+        </div>
+    </form>
+</div>
+
+    <div class="messages">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="messages">
+                    {% for category, message in messages %}
+                        <li class="message-{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+    </div>
+{% endblock %}

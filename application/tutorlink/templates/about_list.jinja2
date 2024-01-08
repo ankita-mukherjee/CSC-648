@@ -1,0 +1,25 @@
+{% set title = "About - Tutorlink" %}
+{% set css = ["about_list.css"] %}
+{#{% set js = [""] %}#}
+{% extends "base.jinja2" %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block body %}
+    <center>
+        <h1>Software Engineering class SFSU</h1>
+        <h2>Fall, 2023</h2>
+        <h2>Section 03</h2>
+        <h2>Team 2</h2>
+    </center>
+
+    <ul>
+        {% for student in students %}
+            <li>
+                <a href="{{ url_for("about_page", student=student) }}" class="about-student">{{ student }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

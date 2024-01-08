@@ -1,0 +1,53 @@
+body
+{
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font: 15px monospace;
+}
+#page-content
+{
+  padding-bottom: 57px;
+}
+#page-footer
+{
+  height: 57px;
+  position: absolute;
+  bottom: 0;
+}
+
+main
+{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+#nav-bar, #page-footer
+{
+  font-family: "Arial", "Comic Sans MS", "monospace";
+}
+
+.line-break
+{
+  margin: 0 0;
+  border: 2px solid black;
+}
+
+a:link, a:visited
+{
+  color: inherit;
+}
+a
+{
+  text-decoration:none;
+}
+a:hover
+{
+  text-decoration:underline;
+}
+
+br
+{
+  clear: both;
+}

@@ -1,0 +1,53 @@
+{% set title = "Login"%}
+{% set css = ["login.css"]%}
+{% extends "base.jinja2"%}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"/>
+{% endblock %}
+
+{% block body %}
+
+    <div class="login-body">
+
+    <div class="login-wrapper">
+            <h1>Login</h1>
+            <form method="POST">
+                {{ form.csrf_token }}
+                <div class="login-box">
+                    <input type="text" name="email" placeholder="Email" required>
+                    {# <i class="bx bxs-user"></i> #}
+                    {% if form.email.errors %}
+                        <ul class="errors">
+                            {% for error in form.email.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="login-box">
+                    <input type="password" name="password" placeholder="Password" required>
+                    {# <i class="bx bxs-lock-alt"></i> #}
+                    {% if form.email.errors %}
+                        <ul class="errors">
+                            {% for error in form.email.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="register-forgot">
+                    <a href="{{url_for('register_page')}}">Sign Up?</a>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <div>
+                    <button class="btn" type="submit">Login</button>
+                </div>
+            </form>
+
+    </div>
+
+    </div>
+
+{% endblock %}
